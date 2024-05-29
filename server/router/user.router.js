@@ -1,0 +1,15 @@
+const express = require('express')
+const { registerUser, loginUser, updateUser, deleteUser, changePassword ,getFavoriteMovies ,addFavoriteMovies,deleteFavoriteMovies,deleteFavoriteMovieById} = require('../controller/user.controller')
+const { authMiddleware } = require('../middleware/auth')
+const router = express.Router()
+
+router.post('/',loginUser)
+router.post('/register',registerUser)
+router.post('/favorite',authMiddleware,addFavoriteMovies)
+router.get('/favorite',authMiddleware,getFavoriteMovies)
+router.delete('/favorite',authMiddleware,deleteFavoriteMovies)
+router.delete('/favorite/:movieId',authMiddleware,deleteFavoriteMovieById)
+router.put('/',authMiddleware,updateUser)
+router.put('/password',authMiddleware,changePassword)
+router.delete('/',authMiddleware,deleteUser)
+module.exports = router

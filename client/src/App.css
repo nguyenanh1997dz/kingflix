@@ -1,0 +1,43 @@
+.react-confirm-alert-overlay{
+    background-color: transparent !important;
+}
+
+.react-confirm-alert-button-group > button {
+    background-color:  #F20000
+}
+
+.pagination {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    border-radius: 2px;
+  }
+  
+  .pagination li {
+    list-style-type: none;
+    display: inline-block;
+  }
+  .pagination .selected  {
+    background-color:  #F20000
+  } 
+ 
+  .pagination li a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.3s ease; 
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%; 
+  }
+  
+  .pagination li a:hover,
+  .pagination li.active a {
+    background: rgba(255, 255, 255, 0.2);
+  }
