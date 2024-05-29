@@ -27,8 +27,8 @@ router.get("/google", passport.authenticate("google", ["profile", "email"]));
 router.get(
 	"/google/callback",
 	passport.authenticate("google", {
-		successRedirect: "/auth/login/success",
-		failureRedirect: "/auth/login/failed",
+		successRedirect: "https://kingflix.onrender.com/auth/login/success",
+		failureRedirect: "https://kingflix.onrender.com/auth/login/failed",
 	})
 );	
 
