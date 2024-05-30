@@ -8,7 +8,7 @@ router.get("/login/success", (req, res) => {
 		const user = req.user;
 		user.token = generateToken(user._id)
 		const userData = JSON.stringify(user);
-		const redirectUrl = `http://localhost:5173/login?data=${encodeURIComponent(userData)}`;
+		const redirectUrl = `${process.env.CLIENT_ORIGIN}/login?data=${encodeURIComponent(userData)}`;
 	    res.redirect(redirectUrl);
 	} else {
 	  res.status(403).json({ error: true, message: "Not Authorized" });
