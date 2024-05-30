@@ -7,7 +7,7 @@ const connectToMongoDB = require('./config/database.config');
 const passport = require('passport');
 const passportStrategy  = require('./passport')
 const session = require('express-session')
-
+const MemoryStore = require('memorystore')(session)
 const authRouter = require('./router/auth.router')
 const userRouter= require('./router/user.router')
 const movieRouter= require('./router/movie.router')
@@ -22,11 +22,14 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 app.use(session({
-  secret: 'your-session-secret',
+  cookie: { maxAge: 86400000 },
+  store: new MemoryStore({
+    checkPeriod: 86400000 // prune expired entries every 24h
+  }),
   resave: false,
-  saveUninitialized: false,
-  cookie: { maxAge: 24 * 60 * 60 * 1000 } 
-}));
+  saveUninitialized: false, // Add this line
+  secret: 'keyboard cat'
+}))
 
 app.use(passport.initialize())
 app.use(passport.session());

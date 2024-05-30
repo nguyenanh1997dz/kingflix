@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL_BACKEND = "http://localhost:8000/api/";
+const BASE_URL_BACKEND = "https://kingflix.onrender.com/api/";
 
 const Axios = axios.create({
     baseURL: BASE_URL_BACKEND,
