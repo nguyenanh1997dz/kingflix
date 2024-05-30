@@ -39,7 +39,7 @@ const corsOptions = {
     credentials: true 
   };
 
-
+console.log(process.env.CLIENT_ORIGIN);
 app.use(cors(corsOptions));
 app.use('/api/user',userRouter)
 app.use('/auth',authRouter)
