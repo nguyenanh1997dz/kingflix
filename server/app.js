@@ -35,7 +35,7 @@ app.use(passport.initialize())
 app.use(passport.session());
 app.use(morgan('dev'))
 const corsOptions = {
-  origin: "https://kingflix-gamma.vercel.app/",
+  origin: "https://kingflix-gamma.vercel.app",
     credentials: true 
   };
 
