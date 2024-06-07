@@ -46,9 +46,9 @@ const Register = () => {
           className="w-full 2xl:w-2/5 gap-8 flex-colo p-8 sm:p-14 md:w-3/5 bg-dry  rounded-lg border border-border"
         >
           <img
-            src="/images/logo.png"
+            src="/images/logo2.jpg"
             alt=""
-            className="w-full h-12 object-contain"
+            className="w-full h-16 object-contain"
           />
           <CustomInput
             name="fullName"
@@ -103,9 +103,9 @@ const Register = () => {
             )}
           </button>
           <p className="text-center text-border">
-            Don't have an account?
-            <Link className="text-dryGray font-semibold ml-2" to="/register">
-              Sign Up
+            Have an account?
+            <Link className="text-dryGray font-semibold ml-2" to="/login">
+            Log in
             </Link>
           </p>
         </form>

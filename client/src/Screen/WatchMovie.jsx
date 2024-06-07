@@ -2,14 +2,18 @@ import React, { useEffect, useState } from "react";
 import Layout from "../Layout/Layout";
 import { Link, useParams } from "react-router-dom";
 import { FaPlay } from "react-icons/fa";
-import { FaDownload } from "react-icons/fa6";
+
 import { FaHeart } from "react-icons/fa";
 import { BiArrowBack } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { getDetailsMovieAction } from "../Redux/Action/movieAction";
 import Loader from "../Components/Loader";
 import { RiMovie2Line } from "react-icons/ri";
+import { likeMovieFunc } from "../Context/likeMoviesFunction";
+
+
 const WatchMovie = () => {
+
   const sameClass = "w-full gap-6 flex-colo min-h-screen";
   const [play, setPlay] = useState(false);
   const playMovie = () => {
@@ -20,6 +24,7 @@ const WatchMovie = () => {
   const { isLoading, isError, movie } = useSelector(
     (state) => state.getDetailsMovie
   );
+  const { userInfo } = useSelector((state) => state.userLogin);
   useEffect(() => {
     dispatch(getDetailsMovieAction(id));
   }, [dispatch, id]);
@@ -37,12 +42,11 @@ const WatchMovie = () => {
               </Link>
               <div className="flex-btn sm:w-auto w-full gap-5">
                 <button
+                  type="button"
+                  onClick={() => likeMovieFunc(movie?._id,userInfo,dispatch)}
                   className={`bg-white hover:text-subMain text-white transitions bg-opacity-30 rounded px-4 py-3 text-sm`}
                 >
                   <FaHeart />
-                </button>
-                <button className="bg-subMain flex-rows gap-2 hover:text-main transitions text-white rounded px-8 font-medium py-3 text-sm">
-                  <FaDownload /> Download
                 </button>
               </div>
             </div>

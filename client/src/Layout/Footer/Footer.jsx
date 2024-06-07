@@ -25,7 +25,7 @@ const Footer = () => {
       ]
     },
     {
-      title: "Company",
+      title: "Top Categories",
       links: [
         {
           name: "Home",
@@ -46,7 +46,7 @@ const Footer = () => {
       ]
     },
     {
-      title: "Company",
+      title: "My Account",
       links: [
         {
           name: "Home",

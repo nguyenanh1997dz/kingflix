@@ -65,9 +65,9 @@ const Login = () => {
           className="w-full 2xl:w-2/5 gap-8 flex-colo p-8 sm:p-14 md:w-3/5 bg-dry  rounded-lg border border-border"
         >
           <img
-            src="/images/logo.png"
+            src="/images/logo2.jpg"
             alt=""
-            className="w-full h-12 object-contain"
+            className="w-full h-16 object-contain"
           />
           <CustomInput
             name="email"
@@ -105,15 +105,18 @@ const Login = () => {
               Sign Up
             </Link>
           </p>
-        </form>
-        <button
+          <button
             type="button"
-            onClick={googleAuth}
+            onClick={() => {
+              alert("Please enter your")
+            }}
             className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
           >
             <FaGoogle className="mr-2 -ml-1 w-4 h-4" />
             Sign in with Google
           </button>
+        </form>
+     
       </div>
     </Layout>
   );
